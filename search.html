@@ -1,0 +1,45 @@
+<link rel = "stylesheet" href = "project.css">
+<div id="wrapper">
+<h1>University of West Georgia Football Team</h1>
+<a href="file:///C:/Users/Dlyma/OneDrive/Desktop/School/Intro%20to%20web%20design/project/home.html">Home</a>&nbsp;&nbsp;
+<a href="file:///C:/Users/Dlyma/OneDrive/Desktop/School/Intro%20to%20web%20design/project/news.html">News</a>&nbsp;&nbsp;
+<a href="file:///C:/Users/Dlyma/OneDrive/Desktop/School/Intro%20to%20web%20design/project/roster.html">Roster</a>&nbsp;&nbsp;
+<a href="file:///C:/Users/Dlyma/OneDrive/Desktop/School/Intro%20to%20web%20design/project/schedule.html">Schedule</a>&nbsp;&nbsp;
+<a href="file:///C:/Users/Dlyma/OneDrive/Desktop/School/Intro%20to%20web%20design/project/search.html">Search</a>&nbsp;&nbsp;
+<a href="file:///C:/Users/Dlyma/OneDrive/Desktop/School/Intro%20to%20web%20design/project/stats.html">Stats</a>&nbsp;&nbsp;
+<h2>Search</h2>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Years Active</th>
+  </tr>
+  <tr>
+    <td>Jalen Burton</td>
+    <td>2025-Present</td>
+  </tr>
+</table>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+
+</div>
